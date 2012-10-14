@@ -1,0 +1,10 @@
+### CLEANING OLD FILES
+echo "CLEANING OLD FILES"
+rm done/boot.img
+### CREATE BOOTIMG
+echo "CREATE BOOTIMG"
+cd tools/
+./create_boot.img_gzip.sh
+cd ..
+### CREATE BOOTIMG
+echo "DONE"

@@ -1,0 +1,14 @@
+### CLEANING OLD RAMDISK
+echo "CLEANING OLD RAMDISK"
+rm tools/ramdisk.cpio.gz
+
+### REPACKING RAMDISK
+echo "REPACKING RAMDISK"
+cd ramdisk
+for i in $(find . | grep .gitignore | grep './')
+do
+	rm $i
+done
+find . | cpio -o -H newc | gzip > ../tools/ramdisk.cpio.gz
+cd ../
+
